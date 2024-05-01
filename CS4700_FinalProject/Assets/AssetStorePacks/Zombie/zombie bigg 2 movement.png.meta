@@ -108,7 +108,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: zombie bigg 2 movement_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 106
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f79deb6f412034e83a7bb9d92d3fbc
+      internalID: 1751456709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie bigg 2 movement_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 106
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4207c4bb38619834a9e94fea1add1df7
+      internalID: 1478538652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie bigg 2 movement_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 106
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa029c96b47ba54084ca4eb62efe84e
+      internalID: -924424188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie bigg 2 movement_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 58
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651e4cfc53ecd35459637fdc0cb11fd3
+      internalID: -1291353102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie bigg 2 movement_4
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 57
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef9ffb5e8d85c44d86e2c8c0b24973b
+      internalID: -1174344260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie bigg 2 movement_5
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 57
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c0acd6d11ac5e4ab878d8652ac248e
+      internalID: 2006036905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie bigg 2 movement_6
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 10
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df0f89824789764598a32a50e78d115
+      internalID: -606283660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie bigg 2 movement_7
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 10
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5433d1edc1a23b0448f43b3ed71024a9
+      internalID: 1106510244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +287,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zombie bigg 2 movement_0: 1751456709
+      zombie bigg 2 movement_1: 1478538652
+      zombie bigg 2 movement_2: -924424188
+      zombie bigg 2 movement_3: -1291353102
+      zombie bigg 2 movement_4: -1174344260
+      zombie bigg 2 movement_5: 2006036905
+      zombie bigg 2 movement_6: -606283660
+      zombie bigg 2 movement_7: 1106510244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

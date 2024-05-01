@@ -3,32 +3,52 @@ using UnityEngine.UI;
 
 public class AiZ : MonoBehaviour
 {
-    public Transform target;        // Set target from inspector instead of looking in Update
+    public GameObject target;
     public float speed = 3f;
     public int maxHealth = 100;     // Maximum health of the enemy
-    public int currentHealth;       // Current health of the enemy
     public int damage;              // Amount of damage that player takes on collision
-    public Slider healthBar;        // Reference to the health bar UI element
 
+    private int currentHealth;      // Current health of the enemy
+    private Slider healthBar;       // Reference to the healthbar
+    private Transform targetLocation;        // Set target from inspector instead of looking in Update
+    private Animator animator;
+    private Rigidbody2D rb;
     void Start()
     {
+        healthBar = GetComponentInChildren<Slider>(); //Get the healthbar from canvas
+        targetLocation = target.GetComponent<Transform>();
         currentHealth = maxHealth;  // Set current health to max health at the start
         healthBar.maxValue = maxHealth;    // Set the maximum value of the health bar
         healthBar.value = maxHealth;       // Set the initial value of the health bar
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         // Rotate to look at the player
-        transform.LookAt(target.position);
+        transform.LookAt(targetLocation.position);
         transform.Rotate(new Vector3(0, -90, 0), Space.Self); // Correcting the original rotation
 
         // Move towards the player
-        if (Vector3.Distance(transform.position, target.position) > 0.01f)
+        if (Vector3.Distance(transform.position, targetLocation.position) > 0.01f)
         {   // Move if distance from target is greater than 1
             transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
+            animator.SetBool("isWalking", true); //update animator's parameter to tell that the Enemy should be walking
         }
+        else
+        {
+            animator.SetBool("isWalking", false); ////update animator's parameter to tell that the Enemy shouldn't be walking
+        }
+
     }
+
+    private void FixedUpdate()
+    {
+        //TODO: convert zombie movement to physics based instead of transform based in Update()
+    }
+
+
 
     // Method to decrease enemy health
     public void TakeDamage(int damage)
@@ -49,18 +69,17 @@ public class AiZ : MonoBehaviour
         Destroy(gameObject);    // Destroy the enemy object
     }
 
-    // Player collision
-    private void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        // Get the object that the enemy collided with 
-        GameObject hitObject = hitInfo.gameObject;
+    
+    //If there is a collision (not in cases where IsTrigger is used on at least one of objects),
+    //then decrease health of player
 
-        // If the enemy collided with a player, decrease its health
-        PlayerHealth player = hitObject.GetComponent<PlayerHealth>();
-        if(player != null)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        if (collision.gameObject.tag == "Player")
         {
             player.DecreaseHealth(damage);
-        }
 
+        }
     }
 }
