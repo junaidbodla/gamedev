@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     private Animator animator;
-    public int maxHealth = 100;
+    public int maxHealth;
     public int health;
     public Slider healthBar;
 
@@ -31,9 +31,10 @@ public class PlayerHealth : MonoBehaviour
         // decrease health
         if(health > 0)
         {
-            animator.Play("PlayerHurt");
             health -= value;
             healthBar.value = health;
+            animator.SetTrigger("playerTookDamage"); //updates parameter of animator, notifying it that player took damage
+ 
         }
         
         if(health <= 0) // kill the player if health is depleted
@@ -57,13 +58,13 @@ public class PlayerHealth : MonoBehaviour
     
     void Die()
     {
-        // kill player
-        animator.Play("PlayerDeath");
+        animator.SetTrigger("playerDies"); //updates parameter of animator, notifying it that player is dead
     }
 
     public void OnDeathAnimFinished()
     {
         // reload scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //TODO: go to game over scene
     }
 }
