@@ -7,6 +7,7 @@ public class AiZ : MonoBehaviour
     public float speed = 3f;
     public int maxHealth = 100;     // Maximum health of the enemy
     public int currentHealth;       // Current health of the enemy
+    public int damage;              // Amount of damage that player takes on collision
     public Slider healthBar;        // Reference to the health bar UI element
 
     void Start()
@@ -46,5 +47,20 @@ public class AiZ : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);    // Destroy the enemy object
+    }
+
+    // Player collision
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        // Get the object that the enemy collided with 
+        GameObject hitObject = hitInfo.gameObject;
+
+        // If the enemy collided with a player, decrease its health
+        PlayerHealth player = hitObject.GetComponent<PlayerHealth>();
+        if(player != null)
+        {
+            player.DecreaseHealth(damage);
+        }
+
     }
 }
