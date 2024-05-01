@@ -18,9 +18,10 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    void Shoot()
+        void Shoot()
     {
-        //a bullet prefab is spawned at where the fire point is and facing where ever the firepoint is facing
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        // Instantiate a new bullet
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
     }
 }

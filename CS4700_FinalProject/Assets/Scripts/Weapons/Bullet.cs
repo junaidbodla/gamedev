@@ -6,32 +6,33 @@ public class Bullet : MonoBehaviour
 {
     public float bulletSpeed;
     public float bulletLifetime;
+    public int damage;
 
     private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
-        //once bullet is instantiated, immediately give it a velocity using the direction in which it spawned in
-        rb.velocity = gameObject.transform.up * bulletSpeed;
+        // Once bullet is instantiated, immediately give it a velocity using the direction in which it spawned in
+        rb.velocity = transform.up * bulletSpeed;
 
-
-
-        //destroys the bullet object after a while
+        // Destroys the bullet object after a while
         Destroy(gameObject, bulletLifetime);
-        
     }
-
-
-
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        /*
-        TODO:
-            hitInfo holds info about what the bullet collided with
-            If bullet collides with enemy, destroy bullet and use hitInfo to call some public TakeDamage(int) of the enemy gameobject
-            If bullet collides with wall, destroy bullet
-        */
+        // Get the object the bullet collided with
+        GameObject hitObject = hitInfo.gameObject;
+
+        // If the bullet collided with an enemy, decrease its health
+        AiZ enemy = hitObject.GetComponent<AiZ>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
     }
 }
