@@ -13,6 +13,8 @@ public class AiZ : MonoBehaviour
     private Transform targetLocation;        // Set target from inspector instead of looking in Update
     private Animator animator;
     private Rigidbody2D rb;
+
+    
     void Start()
     {
         healthBar = GetComponentInChildren<Slider>(); //Get the healthbar from canvas
@@ -26,19 +28,26 @@ public class AiZ : MonoBehaviour
 
     void Update()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player"); //*** trial
         // Rotate to look at the player
-        transform.LookAt(targetLocation.position);
-        transform.Rotate(new Vector3(0, -90, 0), Space.Self); // Correcting the original rotation
+        if (player != null) //*** trial
+        { //*** trial
 
-        // Move towards the player
-        if (Vector3.Distance(transform.position, targetLocation.position) > 0.01f)
-        {   // Move if distance from target is greater than 1
-            transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
-            animator.SetBool("isWalking", true); //update animator's parameter to tell that the Enemy should be walking
-        }
-        else
-        {
-            animator.SetBool("isWalking", false); ////update animator's parameter to tell that the Enemy shouldn't be walking
+            targetLocation = player.transform; //*** trial
+
+            transform.LookAt(targetLocation.position);
+            transform.Rotate(new Vector3(0, -90, 0), Space.Self); // Correcting the original rotation
+
+            // Move towards the player
+            if (Vector3.Distance(transform.position, targetLocation.position) > 0.01f)
+            {   // Move if distance from target is greater than 1
+                transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
+                animator.SetBool("isWalking", true); //update animator's parameter to tell that the Enemy should be walking
+            }
+            else
+            {
+                animator.SetBool("isWalking", false); ////update animator's parameter to tell that the Enemy shouldn't be walking
+            }
         }
 
     }
@@ -61,6 +70,7 @@ public class AiZ : MonoBehaviour
         {
             Die();  // Call Die method if health is less than or equal to 0
         }
+
     }
 
     // Method to handle enemy's death
