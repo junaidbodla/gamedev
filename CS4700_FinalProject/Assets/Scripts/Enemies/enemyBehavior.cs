@@ -8,6 +8,7 @@ public class AiZ : MonoBehaviour
     public int maxHealth = 100;     // Maximum health of the enemy
     public int damage;              // Amount of damage that player takes on collision
 
+    private GameObject camera;          // Reference to game camera
     private GameObject target;      // Reference to game object of current target
     private Transform targetLocation;        // Set target from inspector instead of looking in Update
     private int currentHealth;      // Current health of the enemy
@@ -18,6 +19,7 @@ public class AiZ : MonoBehaviour
     
     void Start()
     {
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
         target = GameObject.FindGameObjectWithTag(targetTag); //Finds the target gameObject given only its tag
         healthBar = GetComponentInChildren<Slider>(); //Get the healthbar from canvas
         targetLocation = target.GetComponent<Transform>();
@@ -30,8 +32,6 @@ public class AiZ : MonoBehaviour
 
     void Update()
     {
-        target = GameObject.FindGameObjectWithTag(targetTag);  //gets the target the zombie is following depending on the tag
-
         // Rotate to look at the player
         if (target != null) 
         {
@@ -40,6 +40,10 @@ public class AiZ : MonoBehaviour
 
             transform.LookAt(targetLocation.position);
             transform.Rotate(new Vector3(0, -90, 0), Space.Self); // Correcting the original rotation
+
+            // Resets healthbar so it doesn't rotate as enemy rotates
+            healthBar.transform.rotation = camera.transform.rotation;
+            healthBar.transform.position = gameObject.transform.position;
 
             // Move towards the player
             if (Vector3.Distance(transform.position, targetLocation.position) > 0.01f)
@@ -68,6 +72,7 @@ public class AiZ : MonoBehaviour
         currentHealth -= damage;            // Decrease current health by the amount of damage
 
         healthBar.value = currentHealth;    // Update the health bar
+
 
         if (currentHealth <= 0)
         {
