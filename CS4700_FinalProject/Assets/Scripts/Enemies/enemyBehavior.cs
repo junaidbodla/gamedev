@@ -3,20 +3,22 @@ using UnityEngine.UI;
 
 public class AiZ : MonoBehaviour
 {
-    public GameObject target;
+    public string targetTag;
     public float speed = 3f;
     public int maxHealth = 100;     // Maximum health of the enemy
     public int damage;              // Amount of damage that player takes on collision
 
+    private GameObject target;      // Reference to game object of current target
+    private Transform targetLocation;        // Set target from inspector instead of looking in Update
     private int currentHealth;      // Current health of the enemy
     private Slider healthBar;       // Reference to the healthbar
-    private Transform targetLocation;        // Set target from inspector instead of looking in Update
     private Animator animator;
     private Rigidbody2D rb;
 
     
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag(targetTag); //Finds the target gameObject given only its tag
         healthBar = GetComponentInChildren<Slider>(); //Get the healthbar from canvas
         targetLocation = target.GetComponent<Transform>();
         currentHealth = maxHealth;  // Set current health to max health at the start
@@ -28,12 +30,13 @@ public class AiZ : MonoBehaviour
 
     void Update()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player"); //*** trial
-        // Rotate to look at the player
-        if (player != null) //*** trial
-        { //*** trial
+        target = GameObject.FindGameObjectWithTag(targetTag);  //gets the target the zombie is following depending on the tag
 
-            targetLocation = player.transform; //*** trial
+        // Rotate to look at the player
+        if (target != null) 
+        {
+
+            targetLocation = target.transform; 
 
             transform.LookAt(targetLocation.position);
             transform.Rotate(new Vector3(0, -90, 0), Space.Self); // Correcting the original rotation
@@ -51,7 +54,7 @@ public class AiZ : MonoBehaviour
         }
 
     }
-
+    
     private void FixedUpdate()
     {
         //TODO: convert zombie movement to physics based instead of transform based in Update()
