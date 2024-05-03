@@ -445,11 +445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412703984874617824, guid: 3edd3612ee5fe427284c68bfd909a867, type: 3}
       propertyPath: _maximumSpawnTime
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6412703984874617824, guid: 3edd3612ee5fe427284c68bfd909a867, type: 3}
       propertyPath: _minimumSpawnTime
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8975577565074037783, guid: 3edd3612ee5fe427284c68bfd909a867, type: 3}
       propertyPath: m_Name
@@ -1025,11 +1025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412703984874617824, guid: 3edd3612ee5fe427284c68bfd909a867, type: 3}
       propertyPath: _maximumSpawnTime
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6412703984874617824, guid: 3edd3612ee5fe427284c68bfd909a867, type: 3}
       propertyPath: _minimumSpawnTime
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8975577565074037783, guid: 3edd3612ee5fe427284c68bfd909a867, type: 3}
       propertyPath: m_Name
@@ -1542,6 +1542,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1400078779}
+    - target: {fileID: 6187787466018943583, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8481795566218671722, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.031
@@ -2304,11 +2308,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6412703984874617824, guid: 3edd3612ee5fe427284c68bfd909a867, type: 3}
       propertyPath: _maximumSpawnTime
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6412703984874617824, guid: 3edd3612ee5fe427284c68bfd909a867, type: 3}
       propertyPath: _minimumSpawnTime
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8975577565074037783, guid: 3edd3612ee5fe427284c68bfd909a867, type: 3}
       propertyPath: m_Name
