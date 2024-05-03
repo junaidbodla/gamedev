@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveDirection;
 
-
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -27,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     //called every fixed framerate frame, physics stuff done here
     void FixedUpdate()
     {
-        Move();
+        Move();  
     }
 
     void ProcessInputs()

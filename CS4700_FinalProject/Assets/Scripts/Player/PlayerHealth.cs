@@ -6,14 +6,17 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private Animator animator;
     public int maxHealth;
     public int health;
     public Slider healthBar;
 
+    private Animator animator;
+    private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         health = maxHealth;
         healthBar.maxValue = maxHealth;
@@ -59,6 +62,12 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         animator.SetTrigger("playerDies"); //updates parameter of animator, notifying it that player is dead
+
+        //disables player movement, rotation, prevents player from being influenced by physics, and stops player from moving
+        GetComponent<PlayerAim>().enabled = false;
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     public void OnDeathAnimFinished()
