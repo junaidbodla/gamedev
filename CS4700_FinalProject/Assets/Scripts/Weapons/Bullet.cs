@@ -23,16 +23,11 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        // Get the object the bullet collided with
-        GameObject hitObject = hitInfo.gameObject;
-
-        // If the bullet collided with an enemy, decrease its health
-        AiZ enemy = hitObject.GetComponent<AiZ>();
-        if (enemy != null)
+        // If bullet collides with an Enemy, then call TakeDamage() on that enemy and destroy bullet
+        if(hitInfo.tag == "Enemy")
         {
-            enemy.TakeDamage(damage);
+            hitInfo.gameObject.GetComponent<EnemyController>().TakeDamage(damage);
             Destroy(gameObject);
         }
-
     }
 }
