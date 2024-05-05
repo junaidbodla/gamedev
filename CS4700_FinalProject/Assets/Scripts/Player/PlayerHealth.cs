@@ -73,7 +73,8 @@ public class PlayerHealth : MonoBehaviour
     public void OnDeathAnimFinished()
     {
         // reload scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //TODO: go to game over scene
+	SceneManager.LoadScene("GameOver");
     }
 }
