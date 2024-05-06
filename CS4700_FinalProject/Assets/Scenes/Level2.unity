@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &57755850 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8481795566218671722, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
+  m_PrefabInstance: {fileID: 1432292978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &243951304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1429,7 +1434,7 @@ Transform:
   m_GameObject: {fileID: 972083293}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.00032520294, y: 0.17209339, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1450,7 +1455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 0}
+  m_BoundingShape2D: {fileID: 1791784097}
   m_ConfineScreenEdges: 1
   m_Damping: 0
 --- !u!114 &972083296
@@ -1472,7 +1477,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 57755850}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 1.5
@@ -2545,7 +2550,7 @@ Transform:
   m_GameObject: {fileID: 1960121709}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.031, y: -0.115, z: -10}
+  m_LocalPosition: {x: 0.1396748, y: -0.012093395, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
