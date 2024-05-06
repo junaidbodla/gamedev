@@ -11,6 +11,9 @@ public class Weapon : MonoBehaviour
     private float nextFireTime;
     private Animator animator;
 
+    public AudioSource audioSource; //**audio
+    public AudioClip bulletAudioClip; //**audio
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -30,6 +33,7 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
+        audioSource.PlayOneShot(bulletAudioClip); //**audio
         animator.SetTrigger("playerShooting");
         // Instantiate a new bullet
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
