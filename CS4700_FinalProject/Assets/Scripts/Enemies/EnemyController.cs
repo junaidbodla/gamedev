@@ -1,6 +1,7 @@
 using Pathfinding;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class EnemyController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
 
+    private static int zombieCount; // Total number of zombies in the level
+
 
     void Start()
     {
@@ -22,6 +25,9 @@ public class EnemyController : MonoBehaviour
         healthBar.value = maxHealth;       // Set the initial value of the health bar
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        // Increment the total number of zombies
+        zombieCount++;
 
         //not good practice but fixes a bug, and is okay in cases where zombie is always going after player
         animator.SetBool("isWalking", true);
@@ -56,7 +62,16 @@ public class EnemyController : MonoBehaviour
     // Method to handle enemy's death
     void Die()
     {
+         zombieCount--;  // Decrease the total number of zombies
+
         Destroy(gameObject);    // Destroy the enemy object
+
+        // Check if all zombies are killed
+        if (zombieCount <= 0)
+        {
+            // Activate the next level screen
+            SceneManager.LoadScene("NextLevelScreen");
+        }
     }
 
 
