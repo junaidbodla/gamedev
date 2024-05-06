@@ -29,5 +29,10 @@ public class Bullet : MonoBehaviour
             hitInfo.gameObject.GetComponent<EnemyController>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        // If bullet collides with an obstacle like a wall, couch, etc, then destroy bullet
+        else if(hitInfo.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+        }
     }
 }
