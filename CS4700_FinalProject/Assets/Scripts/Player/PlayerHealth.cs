@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void IncreaseHealth(int value)
+    public void IncreaseHealth(float value)
     {
         if(health + value >= maxHealth) // don't allow player's health to exceed max
         {
