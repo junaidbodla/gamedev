@@ -45,6 +45,8 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject newEnemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
                 SetTimeUntilSpawn();
+
+        
             }
         }
         else
