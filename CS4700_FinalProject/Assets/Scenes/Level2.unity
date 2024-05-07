@@ -1434,7 +1434,7 @@ Transform:
   m_GameObject: {fileID: 972083293}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00032520294, y: 0.17209339, z: 0}
+  m_LocalPosition: {x: 0.00032424927, y: 0.17155457, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1987,6 +1987,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 487688698}
+    - target: {fileID: 6187787466018943583, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
+      propertyPath: bulletAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dfefac839cc9c48b4ad1ba3fab371bfd, type: 3}
     - target: {fileID: 8481795566218671722, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.14
@@ -2550,7 +2554,7 @@ Transform:
   m_GameObject: {fileID: 1960121709}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1396748, y: -0.012093395, z: -10}
+  m_LocalPosition: {x: 0.13967575, y: -0.011554569, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
