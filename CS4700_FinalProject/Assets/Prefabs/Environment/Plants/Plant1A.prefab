@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5143400628813184496}
   - component: {fileID: 2833685055057392412}
-  - component: {fileID: 510543336115563738}
+  - component: {fileID: 3524894794617676800}
   m_Layer: 10
   m_Name: Plant1A
   m_TagString: Obstacle
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6251300035400608116}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.427625, y: 2.753444, z: 0}
+  m_LocalPosition: {x: 10.4296, y: 2.753444, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &510543336115563738
-BoxCollider2D:
+--- !u!58 &3524894794617676800
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -117,16 +117,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.23, y: 4.08}
-    newSize: {x: 4.23, y: 4.08}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.3, y: 0}
   serializedVersion: 2
-  m_Size: {x: 4.23, y: 4.08}
-  m_EdgeRadius: 0
+  m_Radius: 0.8
