@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public LevelManager levelManager;
     public Collectable healthDropPrefab;
 
+    public Collectable ammoDropPrefab; // ammo
 
     private int currentHealth;      // Current health of the enemy
     private Slider healthBar;       // Reference to the healthbar
@@ -19,7 +20,6 @@ public class EnemyController : MonoBehaviour
 
     //private static int zombieCount; // Total number of zombies in the level
 
-    public EnemyCollectableDrop collectableDropScript;
 
     void Start()
     {
@@ -79,12 +79,14 @@ public class EnemyController : MonoBehaviour
         {
             Instantiate(healthDropPrefab, transform.position, Quaternion.identity);
         }
+
+         if(randomDropValue == 3)
+        {
+            Instantiate(ammoDropPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);    // Destroy the enemy object
 
-        if (collectableDropScript != null)
-        {
-            collectableDropScript.RandomlyDropCollectable();
-        }
+        
     }
 
 
