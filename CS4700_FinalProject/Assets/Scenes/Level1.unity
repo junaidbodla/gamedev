@@ -1132,6 +1132,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2170866054529075468, guid: 0c3377da5e2be4046847c0720e076755, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170866054529075468, guid: 0c3377da5e2be4046847c0720e076755, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659038587440558553, guid: 0c3377da5e2be4046847c0720e076755, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659038587440558553, guid: 0c3377da5e2be4046847c0720e076755, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4199866906381442817, guid: 0c3377da5e2be4046847c0720e076755, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1233,10 +1249,16 @@ PrefabInstance:
       value: UI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6782154839514878976, guid: 0c3377da5e2be4046847c0720e076755, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c3377da5e2be4046847c0720e076755, type: 3}
+--- !u!1 &111181483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5562114538342894491, guid: 0c3377da5e2be4046847c0720e076755, type: 3}
+  m_PrefabInstance: {fileID: 111181482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &111643077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9387,6 +9409,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2077294688}
     - target: {fileID: 6187787466018943583, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
+      propertyPath: maxAmmo
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187787466018943583, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
       propertyPath: fireRate
       value: 3
       objectReference: {fileID: 0}
@@ -9394,6 +9420,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1811702826}
+    - target: {fileID: 6187787466018943583, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
+      propertyPath: ammoLabelObj
+      value: 
+      objectReference: {fileID: 111181483}
     - target: {fileID: 6187787466018943583, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
       propertyPath: bulletAudioClip
       value: 

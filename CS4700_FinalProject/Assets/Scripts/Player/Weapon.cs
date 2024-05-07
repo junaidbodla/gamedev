@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
     public float fireRate;          // expressed in bullets per second
-    public float maxAmmo;           // max # of bullets
+    public int maxAmmo;             // max # of bullets
     public Transform firePoint;
+    public GameObject ammoLabelObj;
+    private TextMeshProUGUI ammoLabel;
     public GameObject bulletPrefab; 
 
     private float nextFireTime;
-    private float currentAmmo;      // current # of bullets
+    private int currentAmmo;      // current # of bullets
 
     
     private Animator animator;
@@ -22,6 +25,13 @@ public class Weapon : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         currentAmmo = maxAmmo;
+        if(ammoLabelObj)
+        {
+            ammoLabel = ammoLabelObj.GetComponent<TextMeshProUGUI>();
+            //print(ammoLabel.text);
+            if(ammoLabel)
+                ammoLabel.text = currentAmmo.ToString();
+        }
     }
 
 
@@ -59,6 +69,8 @@ public class Weapon : MonoBehaviour
             currentAmmo = 0;
         else
             currentAmmo -= value;
+        if(ammoLabel)
+            ammoLabel.text = currentAmmo.ToString();
     }
 
 
@@ -68,5 +80,7 @@ public class Weapon : MonoBehaviour
             currentAmmo = maxAmmo;
         else
             currentAmmo += value;
+        if(ammoLabel)
+            ammoLabel.text = currentAmmo.ToString();
     }
 }

@@ -134,6 +134,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &37383262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.361772
+      objectReference: {fileID: 0}
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6050223
+      objectReference: {fileID: 0}
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243971501513523892, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334429208691134060, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
+      propertyPath: m_Name
+      value: Ammo Collectable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab43d27eb0c78cb4caa2d3d7ac0a8b0c, type: 3}
 --- !u!4 &57755850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8481795566218671722, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
@@ -1756,6 +1813,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1159242458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5562114538342894491, guid: 0c3377da5e2be4046847c0720e076755, type: 3}
+  m_PrefabInstance: {fileID: 243951304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1240333466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,6 +2154,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1139074870}
+    - target: {fileID: 6187787466018943583, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
+      propertyPath: ammoLabelObj
+      value: 
+      objectReference: {fileID: 1159242458}
     - target: {fileID: 6187787466018943583, guid: e05c891d830620c4db7ff9df6591da47, type: 3}
       propertyPath: bulletAudioClip
       value: 
@@ -2892,3 +2958,4 @@ SceneRoots:
   - {fileID: 243951304}
   - {fileID: 530271427}
   - {fileID: 2027495884}
+  - {fileID: 37383262}

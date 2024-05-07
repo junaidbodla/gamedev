@@ -224,8 +224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 3
-  maxAmmo: 100
+  maxAmmo: 50
   firePoint: {fileID: 4675510817161450582}
+  ammoLabelObj: {fileID: 0}
   bulletPrefab: {fileID: 2043108798432838802, guid: 58e23aa8476a1cc449fb146046502824, type: 3}
   audioSource: {fileID: 0}
   bulletAudioClip: {fileID: 0}
