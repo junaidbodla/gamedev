@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            health += maxHealth;
+            health += value;
         }
         healthBar.value = health;
     }
