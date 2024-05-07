@@ -8,17 +8,24 @@ public class EnemyController : MonoBehaviour
     public int maxHealth = 100;     // Maximum health of the enemy
     public int damage;              // Amount of damage that player takes on collision
     public string targetTag;
+    public LevelManager levelManager;
 
     private int currentHealth;      // Current health of the enemy
     private Slider healthBar;       // Reference to the healthbar
     private Animator animator;
     private Rigidbody2D rb;
 
-    private static int zombieCount; // Total number of zombies in the level
+    //private static int zombieCount; // Total number of zombies in the level
 
 
     void Start()
     {
+
+        if (!levelManager)
+        {
+            levelManager = FindObjectOfType<LevelManager>();
+        }
+
         healthBar = GetComponentInChildren<Slider>(); //Get the healthbar from canvas
         currentHealth = maxHealth;  // Set current health to max health at the start
         healthBar.maxValue = maxHealth;    // Set the maximum value of the health bar
@@ -27,7 +34,7 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         // Increment the total number of zombies
-        zombieCount++;
+        levelManager.addEnemy(1);
 
         //not good practice but fixes a bug, and is okay in cases where zombie is always going after player
         animator.SetBool("isWalking", true);
@@ -62,16 +69,9 @@ public class EnemyController : MonoBehaviour
     // Method to handle enemy's death
     void Die()
     {
-         zombieCount--;  // Decrease the total number of zombies
+         levelManager.removeEnemy(1);  // Decrease the total number of zombies
 
         Destroy(gameObject);    // Destroy the enemy object
-
-        // Check if all zombies are killed
-        if (zombieCount <= 0)
-        {
-            // Activate the next level screen
-            SceneManager.LoadScene("NextLevelScreen");
-        }
     }
 
 

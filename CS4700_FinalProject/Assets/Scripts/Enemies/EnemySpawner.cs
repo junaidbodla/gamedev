@@ -16,41 +16,41 @@ public class EnemySpawner : MonoBehaviour
     private float _maximumSpawnTime;
 
     [SerializeField]
-     private float _spawnDuration;
+    //private float _spawnDuration;
 
     private float _timeUntilSpawn;
-    private float _spawnTimer;
-    public Slider timer;
+    //private float _spawnTimer;
+    //public Slider timer;
+    public LevelManager levelManager;
 
     void Awake()
     {
         SetTimeUntilSpawn();
-	//Set timer and slider to whatever spawn duration
-	timer.maxValue = _spawnDuration;
-	_spawnTimer = _spawnDuration;
+	    //Set timer and slider to whatever spawn duration
+
+        if(!levelManager)
+        {
+            levelManager = FindObjectOfType<LevelManager>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        _timeUntilSpawn -= Time.deltaTime;
-
-        if (_timeUntilSpawn <= 0)
+        if (levelManager.getSpawnTimer() > 0)
         {
-            Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
-            SetTimeUntilSpawn();
+            _timeUntilSpawn -= Time.deltaTime;
+
+            if (_timeUntilSpawn <= 0)
+            {
+                GameObject newEnemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
+                SetTimeUntilSpawn();
+            }
         }
-
-	//once spawn timer is at 0 stop spawning
-	_spawnTimer -= Time.deltaTime;
-	if (_spawnTimer <= 0 ) {
-		enabled = false;
-	}
-
-	//slider to show time
-	if (timer != null) {
-		timer.value = _spawnTimer;
-	}
+        else
+        {
+            enabled = false;
+        }
     }
 
     private void SetTimeUntilSpawn()
