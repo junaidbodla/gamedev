@@ -3,7 +3,10 @@ guid: b019bbe19d49eaf429725b013d0539ba
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - levelManager: {instanceID: 0}
+  - healthDropPrefab: {instanceID: 0}
+  - collectableDropScript: {fileID: -5126853976143066814, guid: ae5d4014cd4fdda4f806446ed6618d63, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
