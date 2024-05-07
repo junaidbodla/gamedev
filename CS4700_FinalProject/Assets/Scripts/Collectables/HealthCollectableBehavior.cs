@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthCollectableBehavior : MonoBehaviour, ICollectableBehaviour
 {
     [SerializeField]
-    private float _healthValue;
+    private int _healthValue;
 
     public void OnCollected(GameObject player)
     {
