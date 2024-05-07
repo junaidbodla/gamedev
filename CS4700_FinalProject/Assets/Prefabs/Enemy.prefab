@@ -685,6 +685,7 @@ MonoBehaviour:
   damage: 10
   targetTag: Player
   levelManager: {fileID: 0}
+  healthDropPrefab: {fileID: 3118703926259779280, guid: 9099ee01d379a41a1aae1c3a3e582395, type: 3}
 --- !u!82 &6885241424201471758
 AudioSource:
   m_ObjectHideFlags: 0

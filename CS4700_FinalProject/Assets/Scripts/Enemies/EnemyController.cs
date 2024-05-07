@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public int damage;              // Amount of damage that player takes on collision
     public string targetTag;
     public LevelManager levelManager;
+    public Collectable healthDropPrefab;
+
 
     private int currentHealth;      // Current health of the enemy
     private Slider healthBar;       // Reference to the healthbar
@@ -69,8 +71,13 @@ public class EnemyController : MonoBehaviour
     // Method to handle enemy's death
     void Die()
     {
-         levelManager.removeEnemy(1);  // Decrease the total number of zombies
-
+        levelManager.removeEnemy(1);  // Decrease the total number of zombies
+        // randomly drop a health item
+        var randomDropValue = Random.Range(1, 8);
+        if(randomDropValue == 3)
+        {
+            Instantiate(healthDropPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);    // Destroy the enemy object
     }
 
