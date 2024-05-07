@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public float fireRate; //expressed in bullets per second
+    public float fireRate;          // expressed in bullets per second
+    public float maxAmmo;           // max # of bullets
     public Transform firePoint;
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefab; 
 
     private float nextFireTime;
+    private float currentAmmo;      // current # of bullets
+
+    
     private Animator animator;
 
     public AudioSource audioSource; //**audio
@@ -17,6 +21,7 @@ public class Weapon : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        currentAmmo = maxAmmo;
     }
 
 
@@ -33,9 +38,35 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        audioSource.PlayOneShot(bulletAudioClip); //**audio
-        animator.SetTrigger("playerShooting");
-        // Instantiate a new bullet
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        // don't fire if ammo is empty
+        if(currentAmmo > 0)
+        {
+            audioSource.PlayOneShot(bulletAudioClip); //**audio
+            animator.SetTrigger("playerShooting");
+            // Instantiate a new bullet
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            removeAmmo(1);
+        }
+        else
+        {
+            // todo: bullet click sound?
+        }
+    }
+
+    public void removeAmmo(int value)
+    {
+        if (currentAmmo - value < 0)
+            currentAmmo = 0;
+        else
+            currentAmmo -= value;
+    }
+
+
+    public void addAmmo(int value)
+    {
+        if (currentAmmo + value >= maxAmmo)
+            currentAmmo = maxAmmo;
+        else
+            currentAmmo += value;
     }
 }
