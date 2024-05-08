@@ -500,7 +500,6 @@ GameObject:
   - component: {fileID: 1810968872745624402}
   - component: {fileID: 1107120011630647681}
   - component: {fileID: 6885241424201471758}
-  - component: {fileID: -5126853976143066814}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -687,6 +686,7 @@ MonoBehaviour:
   targetTag: Player
   levelManager: {fileID: 0}
   healthDropPrefab: {fileID: 3118703926259779280, guid: 9099ee01d379a41a1aae1c3a3e582395, type: 3}
+  ammoDropPrefab: {fileID: 0}
 --- !u!82 &6885241424201471758
 AudioSource:
   m_ObjectHideFlags: 0
@@ -783,16 +783,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-5126853976143066814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050255167757643507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a15aee0cf1b6342a9b348fcf103a5792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _chanceOfCollectableDrop: 0.3
