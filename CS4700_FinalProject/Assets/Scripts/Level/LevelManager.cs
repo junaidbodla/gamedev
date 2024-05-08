@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
         if (remainingEnemies == 0 && spawnTimer <= 0)
         {
             // Activate the next level screen
-            SceneManager.LoadScene("NextLevelScreen");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         spawnTimer -= Time.deltaTime;
@@ -59,5 +59,6 @@ public class LevelManager : MonoBehaviour
             remainingEnemies -= value;
         else
             remainingEnemies = 0;
+        Debug.Log("enemies left: " + remainingEnemies);
     }
 }
