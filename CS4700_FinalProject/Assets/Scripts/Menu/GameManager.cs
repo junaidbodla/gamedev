@@ -23,4 +23,9 @@ public class GameManager : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 	}
 
+	public void SetCurrentLevel(int x)
+	{
+		currentLevel = x;
+	}
+
 }
