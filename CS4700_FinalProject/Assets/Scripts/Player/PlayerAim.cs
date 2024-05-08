@@ -16,7 +16,10 @@ public class PlayerAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LookAtMouse();
+        if (!PauseMenu.GameIsPaused)
+        {
+            LookAtMouse();
+        }
     }
 
     private void LookAtMouse()
