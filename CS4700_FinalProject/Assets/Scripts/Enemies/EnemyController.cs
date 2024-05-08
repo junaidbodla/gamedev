@@ -20,7 +20,6 @@ public class EnemyController : MonoBehaviour
 
     //private static int zombieCount; // Total number of zombies in the level
 
-
     void Start()
     {
 
@@ -79,7 +78,6 @@ public class EnemyController : MonoBehaviour
         {
             Instantiate(healthDropPrefab, transform.position, Quaternion.identity);
         } else {
-
             Instantiate(ammoDropPrefab, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);    // Destroy the enemy object
