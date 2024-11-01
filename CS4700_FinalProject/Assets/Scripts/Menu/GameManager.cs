@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 {
 	//Static instance of Gamemanager
 	public static GameManager instance = null;
-	public int currentLevel = 1;
-	public int highestLevel = 3;
+	public int currentLevel;
+	public int highestLevel;
 
 	void Awake() {
 		if (instance == null) {
@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
 		}
 
 		DontDestroyOnLoad(gameObject);
+	}
+
+	public void SetCurrentLevel(int x)
+	{
+		currentLevel = x;
 	}
 
 }

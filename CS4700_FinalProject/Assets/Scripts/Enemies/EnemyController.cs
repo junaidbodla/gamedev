@@ -77,7 +77,8 @@ public class EnemyController : MonoBehaviour
         if(randomDropValue == 3)
         {
             Instantiate(healthDropPrefab, transform.position, Quaternion.identity);
-        } else {
+        } 
+        else if(randomDropValue == 4){
             Instantiate(ammoDropPrefab, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);    // Destroy the enemy object

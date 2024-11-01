@@ -101,6 +101,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3630425779815684402, guid: 24d1fa3138f76481289c277238345725, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630425779815684402, guid: 24d1fa3138f76481289c277238345725, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -133,4 +137,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32390967941f33418aea28d62e7c6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammoValue: 2
+  _ammoValue: 15
